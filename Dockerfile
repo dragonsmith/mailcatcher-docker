@@ -14,8 +14,11 @@ RUN apk add --no-cache --virtual .build-deps \
         sqlite-dev \
         && \
     gem install -v $MAILCATCHER_VERSION mailcatcher --no-ri --no-rdoc && \
-    apk del .build-deps
+    apk del .build-deps && \
+    adduser -D mailcatcher
 
-EXPOSE 25 80
+USER mailcatcher
 
-CMD ["mailcatcher", "--foreground", "--ip=0.0.0.0", "--smtp-port=25", "--http-port=5000"]
+EXPOSE 1025 1080
+
+CMD ["mailcatcher", "--foreground", "--ip=0.0.0.0"]
