@@ -1,0 +1,6 @@
+{{- if .Values.ingress.auth.enabled -}}
+You have enabled basic http auth. Make sure you have generated
+passwd line with:
+
+  htpasswd -n USER
+{{- end -}}

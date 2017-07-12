@@ -1,0 +1,17 @@
+# Example values for Helm chart.
+# We enable ingress with acme & http-auth support.
+ingress:
+  enabled: true
+  hosts:
+    - mailcatcher.example.com
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  auth:
+    enabled: true
+    # User: user with passwd: nyanya
+    secret: user:$apr1$/9a9ogBi$8.ut1tiRP4DltHs9miqwj1
+  tls:
+    - secretName: mailcatcher-tls
+      hosts:
+        - mailcatcher.example.com
