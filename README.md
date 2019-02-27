@@ -1,12 +1,12 @@
 # Mailcatcher
 
-[![Docker Repository on Quay](https://quay.io/repository/evilmartians/mailcatcher-docker/status "Docker Repository on Quay")](https://quay.io/repository/evilmartians/mailcatcher-docker)
+[![Docker Repository on Quay](https://quay.io/repository/evl.ms/mailcatcher/status "Docker Repository on Quay")](https://quay.io/repository/evl.ms/mailcatcher)
 
 ## Description
 
 Mailcatcher docker image prepared for K8s use.
 
-See [Dockerfile](https://github.com/dragonsmith/mailcatcher/blob/master/Dockerfile) for more info.
+See [Dockerfile](https://github.com/dragonsmith/mailcatcher-docker/blob/master/Dockerfile) for more info.
 
 There is also the [Helm](https://helm.sh) chart here to install this image using `helm` cmd.
 
@@ -15,7 +15,7 @@ There is also the [Helm](https://helm.sh) chart here to install this image using
 Nothing special:
 
 ```shell
-docker run --rm --name mailcatcher -p 127.0.0.1:1080:1080 -p 127.0.0.1:1025:1025 quay.io/evilmartians/mailcatcher-docker:0.6.5
+docker run --rm --name mailcatcher -p 127.0.0.1:1080:1080 -p 127.0.0.1:1025:1025 quay.io/evl.ms/mailcatcher:0.7.0
 ```
 
 ## How to install it into K8s

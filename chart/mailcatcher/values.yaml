@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: quay.io/evilmartians/mailcatcher-docker
-  tag: "0.6.5-1"
+  repository: quay.io/evl.ms/mailcatcher
+  tag: "0.7.0"
   pullPolicy: IfNotPresent
 
 service:

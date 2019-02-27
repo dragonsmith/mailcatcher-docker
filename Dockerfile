@@ -1,15 +1,15 @@
-FROM ruby:2.5.3-alpine3.7
+FROM ruby:2.6.1-alpine3.9
 
 LABEL maintainer="Kirill Kuznetsov <kir@evilmartians.com>"
 
 RUN apk add --no-cache ca-certificates openssl sqlite-libs libstdc++
 
-ARG MAILCATCHER_VERSION=0.6.5
+ARG MAILCATCHER_VERSION=0.7.0
 
 RUN apk add --no-cache --virtual .build-deps \
         ruby-dev make g++ sqlite-dev \
         && \
-    gem install -v $MAILCATCHER_VERSION mailcatcher --no-ri --no-rdoc && \
+    gem install --no-document -v $MAILCATCHER_VERSION mailcatcher && \
     apk del .build-deps
 
 RUN adduser -D mailcatcher
