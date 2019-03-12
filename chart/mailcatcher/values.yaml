@@ -8,7 +8,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     http: 80
     smtp: 25
